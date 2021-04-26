@@ -1,0 +1,11 @@
+/Debug/
+
+
+//忽略项目不必要的文件
+CMSIS
+STM32F1xx_HAL_Driver
+STM32F4xx_HAL_Driver
+
+//忽略CubeIDE(Eclipse)生成的文件
+.settings
+*.launch
