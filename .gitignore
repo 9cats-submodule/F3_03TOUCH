@@ -10,5 +10,5 @@ STM32F4xx_HAL_Driver
 .settings
 *.launch
 
-//为留后路，留下MDK-ARM编译方式
+//MDK-ARM
 MDK-ARM
