@@ -1,8 +1,7 @@
 #include "ft5206.h"
 #include "touch.h"
 #include "ctiic.h"
-#include "usart.h"
-#include "delay.h" 
+#include "base.h"
 #include "string.h" 
 //////////////////////////////////////////////////////////////////////////////////	 
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
@@ -97,7 +96,7 @@ u8 FT5206_Init(void)
 	FT5206_RD_Reg(FT_ID_G_LIB_VERSION,&temp[0],2);  
 	if(temp[0]==0X30&&temp[1]==0X03)//版本:0X3003
 	{ 
-		printf("CTP ID:%x\r\n",((u16)temp[0]<<8)+temp[1]);
+		//printf("CTP ID:%x\r\n",((u16)temp[0]<<8)+temp[1]);
 		return 0;
 	} 
 	return 1;

@@ -1,6 +1,6 @@
 #ifndef __TOUCH_H__
 #define __TOUCH_H__
-#include "sys.h"
+#include "base.h"
 #include "ott2001a.h"	    
 #include "gt9147.h"	    
 #include "ft5206.h"	    

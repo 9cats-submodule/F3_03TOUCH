@@ -1,8 +1,7 @@
 #include "ott2001a.h"
 #include "touch.h"
 #include "ctiic.h"
-#include "usart.h"
-#include "delay.h" 
+#include "base.h"
 //////////////////////////////////////////////////////////////////////////////////	 
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
 //ALIENTEK STM32开发板
@@ -101,7 +100,7 @@ u8 OTT2001A_Init(void)
 	delay_ms(100); 
 	OTT2001A_SensorControl(1);//打开传感器 
 	OTT2001A_RD_Reg(OTT_CTRL_REG,&regval,1);//读取传感器运行寄存器的值来判断I2C通信是否正常
-	printf("CTP ID:%x\r\n",regval);
+	//printf("CTP ID:%x\r\n",regval);
     if(regval==0x80)return 0;
 	return 1;
 }

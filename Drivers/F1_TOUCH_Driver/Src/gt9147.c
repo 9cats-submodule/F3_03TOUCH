@@ -1,8 +1,7 @@
 #include "gt9147.h"
 #include "touch.h"
 #include "ctiic.h"
-#include "usart.h"
-#include "delay.h" 
+#include "base.h"
 #include "string.h" 
 #include "lcd.h" 
 //////////////////////////////////////////////////////////////////////////////////	 
@@ -144,7 +143,7 @@ u8 GT9147_Init(void)
 	delay_ms(100);  
 	GT9147_RD_Reg(GT_PID_REG,temp,4);	//读取产品ID
 	temp[4]=0;
-	printf("CTP ID:%s\r\n",temp);		//打印ID
+	//printf("CTP ID:%s\r\n",temp);		//打印ID
 	if(strcmp((char*)temp,"9147")==0)	//ID==9147
 	{
 		temp[0]=0X02;			
@@ -152,7 +151,7 @@ u8 GT9147_Init(void)
  		GT9147_RD_Reg(GT_CFGS_REG,temp,1);//读取GT_CFGS_REG寄存器
 		if(temp[0]<0X60)//默认版本比较低,需要更新flash配置
 		{
-			printf("Default Ver:%d\r\n",temp[0]);
+			//printf("Default Ver:%d\r\n",temp[0]);
 			GT9147_Send_Cfg(1);//更新并保存配置
 		}
 		delay_ms(10);
