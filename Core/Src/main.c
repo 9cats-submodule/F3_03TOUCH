@@ -50,6 +50,7 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+/* USER CODE BEGIN PFP */
 void Load_Drow_Dialog(void)
 {
 	LCD_Clear(WHITE);

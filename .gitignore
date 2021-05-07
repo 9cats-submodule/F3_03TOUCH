@@ -9,3 +9,6 @@ STM32F4xx_HAL_Driver
 //忽略CubeIDE(Eclipse)生成的文件
 .settings
 *.launch
+
+//为留后路，留下MDK-ARM编译方式
+MDK-ARM
