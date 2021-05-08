@@ -123,7 +123,7 @@ int main(void)
 	LCD_ShowString(30,130,200,12,12,(u8 *)"2019/11/15");
     x++;
 	if(x==12)x=0;
-	LED0_T;
+	PAout(8) = !PAout(8);
 	delay_ms(1000);
   }
   /* USER CODE END 3 */
