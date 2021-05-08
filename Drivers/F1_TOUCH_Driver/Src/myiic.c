@@ -15,17 +15,18 @@
 
 //IIC初始化
 void IIC_Init(void)
-{
-    GPIO_InitTypeDef GPIO_Initure;
+{	
+	//以下内容使用CubeMX配置
+    // GPIO_InitTypeDef GPIO_Initure;
     
-    __HAL_RCC_GPIOC_CLK_ENABLE();   //使能GPIOC时钟
+    // __HAL_RCC_GPIOC_CLK_ENABLE();   //使能GPIOC时钟
     
-    //PC11,12初始化设置
-    GPIO_Initure.Pin=GPIO_PIN_11|GPIO_PIN_12;
-    GPIO_Initure.Mode=GPIO_MODE_OUTPUT_PP;  //推挽输出
-    GPIO_Initure.Pull=GPIO_PULLUP;          //上拉
-    GPIO_Initure.Speed=GPIO_SPEED_FREQ_HIGH;//高速
-    HAL_GPIO_Init(GPIOC,&GPIO_Initure);
+    // //PC11,12初始化设置
+    // GPIO_Initure.Pin=GPIO_PIN_11|GPIO_PIN_12;
+    // GPIO_Initure.Mode=GPIO_MODE_OUTPUT_PP;  //推挽输出
+    // GPIO_Initure.Pull=GPIO_PULLUP;          //上拉
+    // GPIO_Initure.Speed=GPIO_SPEED_FREQ_HIGH;//高速
+    // HAL_GPIO_Init(GPIOC,&GPIO_Initure);
     
     IIC_SDA=1;
     IIC_SCL=1;  

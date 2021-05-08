@@ -51,19 +51,19 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-//清空屏幕并在右上角显示"RST"
+//清空屏幕并在右上角显�?"RST"
 void Load_Drow_Dialog(void)
 {
 	LCD_Clear(WHITE);//清屏   
- 	POINT_COLOR=BLUE;//设置字体为蓝色 
+ 	POINT_COLOR=BLUE;//设置字体为蓝�? 
 	LCD_ShowString(lcddev.width-24,0,200,16,16,"RST");//显示清屏区域
   POINT_COLOR=RED;//设置画笔蓝色 
 }
 ////////////////////////////////////////////////////////////////////////////////
-//电容触摸屏专有部分
+//电容触摸屏专有部�?
 //画水平线
 //x0,y0:坐标
-//len:线长度
+//len:线长�?
 //color:颜色
 void gui_draw_hline(u16 x0,u16 y0,u16 len,u16 color)
 {
@@ -97,16 +97,16 @@ void gui_fill_circle(u16 x0,u16 y0,u16 r,u16 color)
 		gui_draw_hline(x0-x,y0-i,2*x,color);
 	}
 }  
-//两个数之差的绝对值 
-//x1,x2：需取差值的两个数
+//两个数之差的绝对�? 
+//x1,x2：需取差值的两个�?
 //返回值：|x1-x2|
 u16 my_abs(u16 x1,u16 x2)
 {			 
 	if(x1>x2)return x1-x2;
 	else return x2-x1;
 }  
-//画一条粗线
-//(x1,y1),(x2,y2):线条的起始坐标
+//画一条粗�?
+//(x1,y1),(x2,y2):线条的起始坐�?
 //size：线条的粗细程度
 //color：线条的颜色
 void lcd_draw_bline(u16 x1, u16 y1, u16 x2, u16 y2,u8 size,u16 color)
@@ -120,12 +120,12 @@ void lcd_draw_bline(u16 x1, u16 y1, u16 x2, u16 y2,u8 size,u16 color)
 	uRow=x1; 
 	uCol=y1; 
 	if(delta_x>0)incx=1; //设置单步方向 
-	else if(delta_x==0)incx=0;//垂直线 
+	else if(delta_x==0)incx=0;//垂直�? 
 	else {incx=-1;delta_x=-delta_x;} 
 	if(delta_y>0)incy=1; 
-	else if(delta_y==0)incy=0;//水平线 
+	else if(delta_y==0)incy=0;//水平�? 
 	else{incy=-1;delta_y=-delta_y;} 
-	if( delta_x>delta_y)distance=delta_x; //选取基本增量坐标轴 
+	if( delta_x>delta_y)distance=delta_x; //选取基本增量坐标�? 
 	else distance=delta_y; 
 	for(t=0;t<=distance+1;t++ )//画线输出 
 	{  
@@ -145,9 +145,9 @@ void lcd_draw_bline(u16 x1, u16 y1, u16 x2, u16 y2,u8 size,u16 color)
 	}  
 }   
 ////////////////////////////////////////////////////////////////////////////////
-//5个触控点的颜色(电容触摸屏用)												 
+//5个触控点的颜�?(电容触摸屏用)												 
 const u16 POINT_COLOR_TBL[5]={RED,GREEN,BLUE,BROWN,GRED};  
-//电阻触摸屏测试函数
+//电阻触摸屏测试函�?
 void rtp_test(void)
 {
 	u8 key;
@@ -163,8 +163,8 @@ void rtp_test(void)
 				if(tp_dev.x[0]>(lcddev.width-24)&&tp_dev.y[0]<16)Load_Drow_Dialog();//清除
 				else TP_Draw_Big_Point(tp_dev.x[0],tp_dev.y[0],RED);		//画图	  			   
 			}
-		}else delay_ms(10);	//没有按键按下的时候 	    
-		if(key==KEY0_PRES)	//KEY0按下,则执行校准程序
+		}else delay_ms(10);	//没有按键按下的时�? 	    
+		if(key==KEY0_PRES)	//KEY0按下,则执行校准程�?
 		{
 			LCD_Clear(WHITE);	//清屏
 		    TP_Adjust();  		//屏幕校准 
@@ -175,12 +175,12 @@ void rtp_test(void)
 		if(i%20==0)LED0_T;
 	}
 }
-//电容触摸屏测试函数
+//电容触摸屏测试函�?
 void ctp_test(void)
 {
 	u8 t=0;
 	u8 i=0;	  	    
- 	u16 lastpos[5][2];		//最后一次的数据 
+ 	u16 lastpos[5][2];		//�?后一次的数据 
 	while(1)
 	{
 		tp_dev.scan(0);
@@ -227,7 +227,7 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
   u8 x=0;
-  u8 lcd_id[12];						//存放LCD ID字符串
+  u8 lcd_id[12];						//存放LCD ID字符�?
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -265,8 +265,8 @@ int main(void)
 	delay_ms(1500);
  	Load_Drow_Dialog();	 	
 	
-	if(tp_dev.touchtype&0X80)ctp_test();//电容屏测试
-	else rtp_test(); 					//电阻屏测试  
+	if(tp_dev.touchtype&0X80)ctp_test();//电容屏测�?
+	else rtp_test(); 					//电阻屏测�?  
   /* USER CODE END 2 */
 
   /* Infinite loop */

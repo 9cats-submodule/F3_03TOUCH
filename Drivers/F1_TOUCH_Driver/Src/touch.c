@@ -452,21 +452,22 @@ u8 TP_Init(void)
 		return 0;
 	}else
 	{
-		GPIO_InitTypeDef GPIO_Initure;
+		//以下内容使用CubeMX配置
+		// GPIO_InitTypeDef GPIO_Initure;
 
-		__HAL_RCC_GPIOC_CLK_ENABLE();           	//开启GPIOC时钟
+		// __HAL_RCC_GPIOC_CLK_ENABLE();           	//开启GPIOC时钟
 		
-		//PC0,3,13
-		GPIO_Initure.Pin=GPIO_PIN_0|GPIO_PIN_3|GPIO_PIN_13; //PC0,3,13
-		GPIO_Initure.Mode=GPIO_MODE_OUTPUT_PP;  	//推挽输出
-		GPIO_Initure.Pull=GPIO_PULLUP;          	//上拉
-		GPIO_Initure.Speed=GPIO_SPEED_FREQ_HIGH;    //高速
-		HAL_GPIO_Init(GPIOC,&GPIO_Initure);
+		// //PC0,3,13
+		// GPIO_Initure.Pin=GPIO_PIN_0|GPIO_PIN_3|GPIO_PIN_13; //PC0,3,13
+		// GPIO_Initure.Mode=GPIO_MODE_OUTPUT_PP;  	//推挽输出
+		// GPIO_Initure.Pull=GPIO_PULLUP;          	//上拉
+		// GPIO_Initure.Speed=GPIO_SPEED_FREQ_HIGH;    //高速
+		// HAL_GPIO_Init(GPIOC,&GPIO_Initure);
 	
-		//PC1,2
-		GPIO_Initure.Pin=GPIO_PIN_1|GPIO_PIN_2; 	//PC1,2
-		GPIO_Initure.Mode=GPIO_MODE_INPUT;  		//上拉输入
-		HAL_GPIO_Init(GPIOC,&GPIO_Initure);
+		// //PC1,2
+		// GPIO_Initure.Pin=GPIO_PIN_1|GPIO_PIN_2; 	//PC1,2
+		// GPIO_Initure.Mode=GPIO_MODE_INPUT;  		//上拉输入
+		// HAL_GPIO_Init(GPIOC,&GPIO_Initure);
 
 		TP_Read_XY(&tp_dev.x[0],&tp_dev.y[0]);//第一次读取初始化	 
 		AT24CXX_Init();			//初始化24CXX

@@ -27,12 +27,12 @@
 
 // 按键部分常用
 // 不使用时注释
-#define KEY0 HAL_GPIO_ReadPin(KEY0_GPIO_Port,KEY0_Pin)//读取按键0
-#define KEY1 HAL_GPIO_ReadPin(KEY1_GPIO_Port,KEY1_Pin)//读取按键1
-#define KEY2 HAL_GPIO_ReadPin(KEY2_GPIO_Port,KEY2_Pin)//读取按键2
+#define KEY0        HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_5)  //KEY0按键PC5
+#define KEY1        HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_15) //KEY1按键PA15
+#define WK_UP       HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_0)  //WKUP按键PA0
 #define KEY0_PRES 1
 #define KEY1_PRES 2
-#define KEY2_PRES 3
+#define WKUP_PRES 3
 u8 KEY_Scan(u8 mode); //按键扫描函数
 
 // 自定义delay函数，兼容部分硬件库
