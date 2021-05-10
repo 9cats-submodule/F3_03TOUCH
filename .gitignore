@@ -10,5 +10,9 @@ STM32F4xx_HAL_Driver
 .settings
 *.launch
 
-//MDK-ARM
-MDK-ARM
+//支持MDK-ARM编译
+MDK-ARM/*
+!MDK-ARM/RTE
+!MDK-ARM/*.uvoptx
+!MDK-ARM/*.uvprojx
+!MDK-ARM/*.s
